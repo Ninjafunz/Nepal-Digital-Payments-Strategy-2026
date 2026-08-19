@@ -2,13 +2,11 @@
 
 ## The Transformation of Nepal's Digital Payments Industry, 2021–2026
 
-**Project type:** MSc Strategy — Industry & Competitive Analysis
+**MSc Strategy Research Project**
 
 ---
 
-## Core Research Question
-
-> **How is digitalization changing the basis of competition and the distribution of economic value in Nepal's payments ecosystem?**
+> **Core Research Question:** How is digitalization changing the basis of competition and the distribution of economic value in Nepal's payments ecosystem?
 
 This is not a "digital payments are growing" report. This is a strategic analysis of **who is gaining power, why, and who is positioned to capture the next profit pool**.
 
@@ -16,164 +14,207 @@ This is not a "digital payments are growing" report. This is a strategic analysi
 
 ## What This Project Demonstrates
 
-1. **Strategic thinking** — applying frameworks to a real, complex, evolving industry
-2. **Industry analysis** — structured understanding of Nepal's payments landscape
-3. **Competitive dynamics** — how banks, wallets, PSPs, and infrastructure providers compete
-4. **Quantitative research** — rigorous data collection and analysis from official sources
-5. **Data engineering** — traceable, auditable data pipeline with full provenance
-6. **Evidence-based strategic recommendations** — grounded in data, not opinion
+| Dimension | Description |
+|-----------|-------------|
+| **Strategic thinking** | Applying Porter's Five Forces, PvP, and scenario analysis to a real industry |
+| **Industry analysis** | Structured understanding of Nepal's payments landscape |
+| **Competitive dynamics** | How banks, wallets, PSPs, and infrastructure providers compete |
+| **Quantitative research** | Rigorous data collection from official NRB sources |
+| **Data engineering** | Traceable, auditable data pipeline with full provenance |
+| **Evidence-based recommendations** | Strategic insights grounded in data, not opinion |
 
 ---
 
-## Project Repository Map
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/Nepal-Digital-Payments-Strategy-2026.git
+cd Nepal-Digital-Payments-Strategy-2026
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Load the database
+python src/ingestion/load_nrb_indicators.py
+
+# Run all analyses
+python src/analysis/run_all_analyses.py
+```
+
+---
+
+## Repository Structure
 
 ```
 Nepal-Digital-Payments-Strategy-2026/
 │
 ├── README.md                          # This file
+├── requirements.txt                   # Python dependencies
+├── LICENSE                            # MIT License
 │
 ├── research/                          # Research architecture
 │   ├── research_question.md           # Formal questions, scope, definitions
 │   ├── hypotheses.md                  # 14 testable hypotheses
 │   ├── methodology.md                 # Research constitution & data hierarchy
-│   ├── data_dictionary.md             # Master variable catalogue
+│   ├── data_dictionary.md             # 91 variables across 10 sections
 │   ├── source_register.md             # Living register of all sources
-│   ├── nrb_data_inventory.md          # NRB dataset inventory (Phase 2)
+│   ├── nrb_data_inventory.md          # NRB dataset inventory
 │   └── analysis_plan.md              # Step-by-step analysis mapping
 │
 ├── data/
-│   ├── raw/                           # Unprocessed data as downloaded
-│   ├── processed/                     # Cleaned, transformed data
+│   ├── raw/                           # Unprocessed data (excluded from repo)
+│   ├── processed/                     # Cleaned data
 │   └── final/                         # Analysis-ready datasets
 │
 ├── database/
-│   ├── payments.db                    # SQLite database (Phase 3)
+│   ├── payments.db                    # SQLite database (excluded from repo)
 │   └── schema.md                      # Database schema documentation
 │
-├── sources/                           # Raw source documents (PDFs, etc.)
-│
-├── notebooks/                         # Jupyter analysis notebooks
+├── sources/                           # Source documents and extraction scripts
+│   ├── bank_registry.csv              # 20+ banks with merger history
+│   ├── data_dictionary.md             # Variable definitions
+│   ├── config.yaml                    # Project configuration
+│   ├── access_attempts_log.md         # NRB access audit trail
+│   └── *.pdf                          # NRB reports (excluded from repo)
 │
 ├── src/
-│   ├── ingestion/                     # Data ingestion scripts
-│   ├── cleaning/                      # Data cleaning scripts
-│   ├── validation/                    # Data validation scripts
-│   └── analysis/                      # Analysis scripts
+│   ├── ingestion/
+│   │   └── load_nrb_indicators.py     # Database loading script
+│   └── analysis/
+│       └── run_all_analyses.py        # All 5 core analyses
 │
-├── analysis/                          # Structured analytical outputs
+├── analysis/
+│   └── charts/                        # Generated visualizations
+│       ├── 01_total_digital_growth.png
+│       ├── 02_channel_value_shares.png
+│       ├── 02b_qr_growth.png
+│       ├── 03_user_engagement.png
+│       ├── 04_hhi_concentration.png
+│       └── 05_channel_positioning.png
 │
-├── dashboard/                         # Visual dashboard specifications
+├── agents/                            # AI agent configurations
+│   ├── data-researcher.md
+│   ├── data-engineer.md
+│   ├── source-auditor.md
+│   ├── strategy-analyst.md
+│   └── visualization-analyst.md
 │
-├── report/                            # Paper sections, figures, tables
-│
-└── agents/                            # AI agent configurations
+├── notebooks/                         # Jupyter notebooks (future)
+├── dashboard/                         # Dashboard specs (future)
+└── report/                            # Paper sections (future)
 ```
 
 ---
 
-## Data Quality Constitution
+## Data Sources
 
-### Fundamental Rules
+### Primary: Nepal Rastra Bank (NRB)
 
-1. **Every quantitative observation must be traceable to a source.** No exceptions.
-2. **No data is invented.** If we don't have it, we say so.
-3. **No strategic conclusions without evidence.** Hypotheses are testable propositions, not assertions.
-4. **No arbitrary scoring systems.** Indices and scores require methodological justification.
-5. **Secondary sources cannot override primary data** without explicit justification.
+| Dataset | Coverage | Variables |
+|---------|----------|-----------|
+| **Payment Systems Indicators** (XLSX) | Jul 2020 – Jul 2025 | 49 variables, 61 months |
+| Bank Supervision Reports (PDF) | 2019–2025 | Bank-level financial data |
+| Payment System Directives | 2021–2026 | Regulatory timeline |
 
-### Source-Type Taxonomy
-
-Every source used in this project must be classified as one of:
-
-| Type Code | Classification | Description |
-|-----------|---------------|-------------|
-| `T1` | Regulatory / Official | Nepal Rastra Bank publications, government statistics |
-| `T2` | Audited Financial | Company annual reports, audited financial statements |
-| `T3` | Company-Reported | Press releases, investor presentations, official social media |
-| `T4` | Regulatory Publication | NRB guidelines, circulars, directives (not data publications) |
-| `T5` | Reputable Secondary | Academic papers, industry reports from established firms |
-| `T6` | Media / News | Reputable news outlets, journalism |
-| `T7` | Analyst Inference | Our own analysis, derived calculations, estimates |
-
-**Rule:** T7 (analyst inference) must be clearly marked and must never be presented as fact. T6 (media) cannot override T1–T3 without explicit justification documented in the source register.
-
----
-
-## Data Hierarchy
-
-When sources conflict, the hierarchy governs:
+### Source Hierarchy
 
 ```
-Tier 1: Nepal Rastra Bank (NRB) — official statistics, payment system indicators
-Tier 2: Audited company annual reports and financial statements
-Tier 3: Official company disclosures and regulated filings
-Tier 4: Regulatory publications (NRB guidelines, circulars, directives)
-Tier 5: Reputable secondary sources (academic, established industry reports)
-Tier 6: News and media reporting
-Tier 7: Analyst inference and derived calculations
+Tier 1: NRB Official Statistics (Payment Systems Indicators)
+Tier 2: Audited Company Financial Statements
+Tier 3: Company Disclosures
+Tier 4: Regulatory Publications
+Tier 5: Reputable Secondary Sources
+Tier 6: News and Media
+Tier 7: Analyst Inference
 ```
 
-**Higher tiers take precedence** unless there is documented evidence that higher-tier data is incomplete or mischaracterized for a specific use case.
+**Every observation in the database has a `source_id` linking to the source register.**
 
 ---
 
-## Project Phase Roadmap
+## Key Findings (Preliminary)
 
-| Phase | Name | Description |
-|-------|------|-------------|
-| **Phase 1** | Architecture | Research question, methodology, data dictionary, schema (CURRENT) |
-| **Phase 2** | Data Inventory | NRB dataset identification and documentation |
-| **Phase 3** | Data Engineering | SQLite database, ingestion pipeline, first NRB dataset import |
-| **Phase 4** | Data Validation | Quality audit, duplicate detection, gap analysis |
-| **Phase 5** | Core Analysis | Five foundational analyses |
-| **Phase 6** | Company Research | eSewa, Khalti, banks, PSPs |
-| **Phase 7** | Strategic Analysis | Competitive positioning, network effects, value chains |
-| **Phase 8** | Scenarios | Industry scenarios for 2027–2030 |
-| **Phase 9** | Synthesis | Final report, strategic recommendations |
+### 1. Nepal is Becoming More Digital
+- Transaction count: 0.97B (2021) → 2.91B (2024) — **3× growth**
+- QR is the breakout channel: **252% YoY growth** in 2022
 
----
+### 2. Two-Layer Market Emerging
+| Layer | Channels | Avg Transaction | Growth |
+|-------|----------|-----------------|--------|
+| **High-value** | Mobile banking, internet banking | NPR 4,000–8,000 | Steady |
+| **High-frequency** | Wallet, QR, POS | NPR 1,000–3,000 | Explosive |
 
-## Abbreviations
+### 3. Engagement Depth Varies by Channel
+- **Mobile banking**: 3× increase in transactions/user (0.68 → 2.01)
+- **Wallet**: Flat at ~1.5 transactions/user — but growing user base
 
-| Abbreviation | Full Name |
-|-------------|-----------|
-| NRB | Nepal Rastra Bank |
-| PSP | Payment Service Provider |
-| PSO | Payment System Operator |
-| QR | Quick Response (code) |
-| POS | Point of Sale |
-| NEPSE | Nepal Stock Exchange |
-| HHI | Herfindahl-Hirschman Index |
-| NPR | Nepalese Rupee |
-| GDP | Gross Domestic Product |
-| KYC | Know Your Customer |
-| AML | Anti-Money Laundering |
-| CDR | Call Detail Record |
+### 4. QR Payments Are Transforming Retail
+- QR transaction count: 195K/month (Jul 2020) → 31.3M/month (Jul 2025)
+- QR transaction value: NPR 589M → NPR 90.9B monthly
+- **160× growth in transaction count over 5 years**
 
 ---
 
-## Technology Stack
+## Research Themes
 
-- **Database:** SQLite (payments.db)
-- **Language:** Python 3
-- **Data Processing:** pandas, numpy
-- **Visualization:** matplotlib, seaborn
-- **Notebooks:** Jupyter
-- **Version Control:** Git
+| # | Theme | Status |
+|---|-------|--------|
+| 1 | Digital payment adoption | ✅ Data collected |
+| 2 | Transaction volume and value | ✅ Data collected |
+| 3 | Payment-channel evolution | ✅ Data collected |
+| 4 | Consumer engagement | ✅ Data collected |
+| 5 | Merchant ecosystem | ⏳ Pending |
+| 6 | Banks vs wallets vs infrastructure | ⏳ Pending |
+| 7 | Network effects | ⏳ Pending |
+| 8 | Customer ownership | ⏳ Pending |
+| 9 | Value-chain economics | ⏳ Pending |
+| 10 | Profit pools | ⏳ Pending |
+| 11 | Regulatory influence | ⏳ Pending |
+| 12 | Strategic groups | ⏳ Pending |
+| 13 | Competitive advantage | ⏳ Pending |
+| 14 | Industry scenarios (2027–2030) | ⏳ Pending |
 
 ---
 
-## How to Work With This Project
+## Methodology
 
-### Rules of Engagement
+- **Mixed-methods design**: quantitative analysis of NRB data + qualitative regulatory analysis
+- **Strategic frameworks**: Porter's Five Forces, PvP profit pool analysis, strategic group mapping, scenario construction
+- **Data integrity**: Every observation has a `source_id`, every calculation is reproducible, raw data is immutable
 
-1. **Research question → methodology → variables → sources → database → analysis → strategy.** This is the sequence. Don't skip steps.
-2. **Primary sources first.** Always start with NRB data before looking at company claims.
-3. **Every number has a source tag.** The `source_id` field in the database is non-negotiable.
-4. **The strategy agent reads but does not modify raw data.** This protects evidence integrity.
-5. **Validate before analyzing.** Every dataset gets a quality audit before any analysis begins.
+See `research/methodology.md` for the full research constitution.
+
+---
+
+## Project Phases
+
+| Phase | Name | Status |
+|-------|------|--------|
+| Phase 1 | Architecture | ✅ Complete |
+| Phase 2 | Data Inventory | ✅ Complete |
+| Phase 3 | Data Engineering | ✅ Complete |
+| Phase 4 | Data Validation | ✅ Complete |
+| Phase 5 | Core Analyses | ✅ Complete |
+| Phase 6 | Company Research | ⏳ Next |
+| Phase 7 | Strategic Analyses | ⏳ Pending |
+| Phase 8 | Scenarios | ⏳ Pending |
+| Phase 9 | Synthesis | ⏳ Pending |
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+## Acknowledgments
+
+- **Nepal Rastra Bank** for publishing the Payment Systems Indicators
+- **Wayback Machine / Internet Archive** for preserving NRB data during website downtime
+- Academic and industry sources listed in `research/source_register.md`
 
 ---
 
 *Project created: August 2026*
-*This is a research architecture document. No data has been collected or analyzed yet.*
