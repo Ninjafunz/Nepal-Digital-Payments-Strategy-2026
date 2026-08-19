@@ -59,14 +59,14 @@ These are the primary data sources. Priority: highest.
 
 | Source ID | Institution | Document | Date | Coverage | URL | Variables | Status |
 |-----------|------------|----------|------|----------|-----|-----------|--------|
-| NRB001 | NRB | Payment System Indicators | Monthly (latest available) | 2021–present | https://www.nrb.org.np | A01–A14, B01–B18, E01–E03, H01–H05 | To collect |
+| NRB001 | NRB | Payment System Indicators | Monthly | 2021–present | ⚠️ NRB website down (500 errors); NOT CONFIRMED in Wayback Machine | A01–A14, B01–B18, E01–E03, H01–H05 | ❌ CRITICAL GAP — must verify when website is accessible |
 | NRB002 | NRB | Payment System Department — Statistics | Monthly/Annual | 2021–present | https://www.nrb.org.np | B01–B18 (detailed breakdown) | To collect |
-| NRB003 | NRB | NRB Annual Report | Annual | 2021–2025 | https://www.nrb.org.np | Industry overview, regulatory context | To collect |
-| NRB004 | NRB | Monetary Policy Statement | Annual | 2021–2026 | https://www.nrb.org.np | H01–H05, regulatory direction | To collect |
-| NRB005 | NRB | Financial Stability Report | Annual | 2021–2025 | https://www.nrb.org.np | System risk, institutional health | To collect |
-| NRB006 | NRB | Banking and Financial Statistics | Annual | 2021–2025 | https://www.nrb.org.np | BFI-level data, deposit/lending context | To collect |
-| NRB007 | NRB | NRB Directives — Payment Systems | Varies | 2021–2026 | https://www.nrb.org.np | H01–H05, regulatory framework | To collect |
-| NRB008 | NRB | Nepal Financial Statistics | Annual | 2021–2025 | https://www.nrb.org.np | GDP, inflation, economic context | To collect |
+| NRB003 | NRB | NRB Annual Report | Annual | 2021–2025 | https://www.nrb.org.np (website down) | Industry overview, regulatory context | ✅ Confirmed via Wayback Machine |
+| NRB004 | NRB | Monetary Policy Statement | Annual | 2021–2026 | https://www.nrb.org.np (website down) | H01–H05, regulatory direction | ✅ Confirmed: English PDF 1.11 MB (2025-26), Nepali 890 KB (2082-83) |
+| NRB005 | NRB | Financial Stability Report | Annual | 2021–2025 | https://www.nrb.org.np (website down) | System risk, institutional health | ⚠️ Not seen in Wayback Machine — verify existence |
+| NRB006 | NRB | Banking and Financial Statistics | Annual | 2021–2025 | https://www.nrb.org.np (website down) | BFI-level data, deposit/lending context | ⚠️ Not seen in Wayback Machine — verify existence |
+| NRB007 | NRB | NRB Directives — Payment Systems | Varies | 2021–2026 | https://www.nrb.org.np (website down) | H01–H05, regulatory framework | ✅ Confirmed: Payment System Directive Dec 2024 (1.37 MB PDF) |
+| NRB008 | NRB | Current Macroeconomic and Financial Situation | Monthly | 2021–2026 | https://www.nrb.org.np (website down) | GDP, inflation, economic context, tables (~2.2-2.5 MB) | ✅ Confirmed: published monthly, English + Nepali + Tables |
 
 ---
 

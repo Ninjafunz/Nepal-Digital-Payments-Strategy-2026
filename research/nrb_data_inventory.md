@@ -1,8 +1,8 @@
-# NRB Data Inventory — Preliminary
+# NRB Data Inventory — Verified (Partial)
 
 **Project:** From Cash to Platforms: The Transformation of Nepal's Digital Payments Industry, 2021–2026
 
-**Status:** PRELIMINARY — requires verification against actual NRB website and publications
+**Status:** PARTIALLY VERIFIED — NRB website down (500 errors); verified via Wayback Machine snapshots (Jan 2025, Jun 2024)
 
 ---
 
@@ -10,7 +10,26 @@
 
 This document identifies official Nepal Rastra Bank (NRB) datasets relevant to this research project. It maps each dataset to the variables defined in the data dictionary.
 
-**Important:** This inventory is based on known NRB publications. The exact availability, format, and coverage of each dataset must be verified when the NRB website is accessible.
+## Verification Status (August 2026)
+
+**NRB website (nrb.org.np) is DOWN** — returning 500 Internal Server Error on all pages tested. The Internet Archive Wayback Machine's CDX API is also temporarily offline. Web search API returned no results for NRB queries.
+
+**What was verified** via Wayback Machine cached snapshots of the NRB homepage (Jan 2025 and Jun 2024):
+
+| Publication | Confirmed | Notes |
+|-------------|-----------|-------|
+| Monetary Policy (English & Nepali) | ✅ Yes | Published annually; full text PDF available |
+| Current Macroeconomic and Financial Situation | ✅ Yes | Published monthly with tables PDF (2–2.4 MB) |
+| NRB Annual Report | ✅ Yes | Published annually |
+| Payment System Directives | ✅ Yes | Seen: "भुक्तानी प्रणालीसम्बन्धी एकीकृत निर्देशन, २०८०" (Integrated Directive on Payment System, 2080) |
+| Financial Corporations Survey (FCS) | ✅ Yes | Referenced on homepage |
+| Payment System Statistics / Indicators | ⚠️ NOT CONFIRMED | Not visible on homepage; may be in a sub-section that wasn't cached |
+| Financial Stability Report | ⚠️ NOT CONFIRMED | Referenced in preliminary inventory but not seen in cached pages |
+| Banking and Financial Statistics | ⚠️ NOT CONFIRMED | Referenced in preliminary inventory but not seen in cached pages |
+
+**Critical finding:** The "Payment System Statistics" or "Payment System Indicators" publication — which would be the PRIMARY data source for this project — could NOT be confirmed through the Wayback Machine. This does not mean it doesn't exist; it may be in a sub-section of the NRB website that wasn't archived, or it may be published under a different name.
+
+**Immediate next step:** When the NRB website comes back online, locate the exact payment system data publication and verify its format, coverage, and download method.
 
 ---
 
@@ -26,18 +45,18 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ## A. NRB Payment System Indicators
 
-### A1: Payment System Statistics (Monthly)
+### A1: Payment System Statistics (Monthly) — UNCONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | Payment System Statistics / Payment System Indicators |
 | **Source ID** | NRB001 |
 | **Institution** | Nepal Rastra Bank — Payment System Department |
-| **Likely URL** | https://www.nrb.org.np/ (Payment System Department section) |
-| **Publication Frequency** | Monthly |
-| **Historical Coverage** | Likely 2018/19 — present (to verify) |
-| **File Format** | PDF report; may contain tables; possibly Excel附录 |
-| **Priority** | P1 — Essential |
+| **URL** | ⚠️ NOT CONFIRMED — NRB website down; sub-section not found in Wayback Machine |
+| **Publication Frequency** | Likely monthly (unconfirmed) |
+| **Historical Coverage** | Unknown — to verify when website is accessible |
+| **File Format** | Unknown — to verify (likely PDF, possibly with Excel appendix) |
+| **Verification Status** | ❌ NOT VERIFIED — primary data source for this project |
 
 **Expected Variables Covered:**
 
@@ -80,18 +99,18 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A2: NRB Annual Report
+### A2: NRB Annual Report — CONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | Nepal Rastra Bank Annual Report |
 | **Source ID** | NRB003 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ (Publications section) |
+| **URL** | https://www.nrb.org.np/ (Publications section) — ⚠️ website currently down |
 | **Publication Frequency** | Annual (Nepali fiscal year ends mid-July) |
-| **Historical Coverage** | FY 2020/21 — FY 2024/25 (to verify) |
-| **File Format** | PDF (full report) |
-| **Priority** | P1 — Essential |
+| **Historical Coverage** | FY 2020/21 — FY 2024/25 (to verify exact range) |
+| **File Format** | PDF (full report) — ✅ confirmed from Wayback Machine |
+| **Verification Status** | ✅ Publication confirmed; exact download URL needs verification |
 
 **Expected Variables Covered:**
 
@@ -110,18 +129,18 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A3: Monetary Policy Statement
+### A3: Monetary Policy Statement — CONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | Monetary Policy Statement |
 | **Source ID** | NRB004 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ (Publications section) |
+| **URL** | https://www.nrb.org.np/ (Publications section) — ⚠️ website currently down |
 | **Publication Frequency** | Annual (with mid-year review) |
 | **Historical Coverage** | FY 2020/21 — FY 2025/26 |
-| **File Format** | PDF |
-| **Priority** | P2 — Important |
+| **File Format** | PDF — ✅ confirmed (English: 1.11 MB for 2025-26; Nepali: 890 KB for 2082-83) |
+| **Verification Status** | ✅ Publication confirmed with file sizes from Wayback Machine |
 
 **Expected Variables Covered:**
 
@@ -139,18 +158,18 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A4: Financial Stability Report
+### A4: Financial Stability Report — UNCONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | Financial Stability Report |
 | **Source ID** | NRB005 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ |
-| **Publication Frequency** | Annual (or semi-annual) |
-| **Historical Coverage** | To verify |
-| **File Format** | PDF |
-| **Priority** | P2 — Important |
+| **URL** | ⚠️ NOT SEEN in Wayback Machine homepage snapshots |
+| **Publication Frequency** | Unknown — likely annual |
+| **Historical Coverage** | Unknown |
+| **File Format** | Unknown |
+| **Verification Status** | ❌ NOT VERIFIED — may exist but not visible in cached pages |
 
 **Expected Variables Covered:**
 
@@ -166,18 +185,18 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A5: Banking and Financial Statistics
+### A5: Banking and Financial Statistics — UNCONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | Banking and Financial Statistics |
 | **Source ID** | NRB006 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ (Statistics section) |
-| **Publication Frequency** | Annual |
-| **Historical Coverage** | To verify |
-| **File Format** | PDF / Excel |
-| **Priority** | P2 — Important |
+| **URL** | ⚠️ NOT SEEN in Wayback Machine homepage snapshots |
+| **Publication Frequency** | Unknown |
+| **Historical Coverage** | Unknown |
+| **File Format** | Unknown |
+| **Verification Status** | ❌ NOT VERIFIED |
 
 **Expected Variables Covered:**
 
@@ -194,18 +213,19 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A6: Nepal Financial Statistics
+### A6: Current Macroeconomic and Financial Situation — CONFIRMED
 
 | Field | Value |
 |-------|-------|
-| **Dataset Name** | Nepal Financial Statistics / Economic Bulletin |
+| **Dataset Name** | Current Macroeconomic and Financial Situation |
 | **Source ID** | NRB008 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ (Statistics section) |
-| **Publication Frequency** | Monthly / Quarterly |
-| **Historical Coverage** | To verify |
-| **File Format** | PDF / Excel |
-| **Priority** | P2 — Important |
+| **URL** | https://www.nrb.org.np/ — ⚠️ website currently down |
+| **Publication Frequency** | Monthly — ✅ confirmed |
+| **Historical Coverage** | At least FY 2023/24 — FY 2025/26 — ✅ confirmed |
+| **File Format** | PDF (English text ~400-800 KB; Tables ~2.2-2.5 MB) — ✅ confirmed |
+| **Verification Status** | ✅ Publication confirmed with file sizes; contains GDP, inflation, monetary data |
+| **Relevance** | Provides macroeconomic context; tables PDF may contain payment-relevant data |
 
 **Expected Variables Covered:**
 
@@ -221,18 +241,19 @@ This document identifies official Nepal Rastra Bank (NRB) datasets relevant to t
 
 ---
 
-### A7: NRB Directives — Payment Systems
+### A7: NRB Directives — Payment Systems — CONFIRMED
 
 | Field | Value |
 |-------|-------|
 | **Dataset Name** | NRB Directives and Circulars — Payment Systems |
 | **Source ID** | NRB007 |
 | **Institution** | Nepal Rastra Bank |
-| **Likely URL** | https://www.nrb.org.np/ (Directives section) |
+| **URL** | https://www.nrb.org.np/ — ⚠️ website currently down |
 | **Publication Frequency** | As issued |
-| **Historical Coverage** | To verify |
-| **File Format** | PDF |
-| **Priority** | P1 — Essential |
+| **Historical Coverage** | At least FY 2080 (2023/24) — ✅ confirmed |
+| **File Format** | PDF — ✅ confirmed (1.37 MB for payment system directive amendment, Dec 2024) |
+| **Verification Status** | ✅ Publication confirmed: "भुक्तानी प्रणालीसम्बन्धी एकीकृत निर्देशन, २०८०" (Integrated Directive on Payment System, 2080) |
+| **Key Finding** | NRB issued amendments to payment system directives in Dec 2024 — regulatory activity is active |
 
 **Expected Variables Covered:**
 
@@ -296,29 +317,62 @@ Based on this inventory, the following data gaps are anticipated:
 
 ---
 
+## Additional Confirmed NRB Data Points (from Homepage)
+
+From the Wayback Machine snapshots, the NRB homepage displays these indicators:
+
+| Indicator | Latest Value | Period |
+|-----------|-------------|--------|
+| Total Deposits | NPR 7,600 billion | Dec 2025 |
+| Total Lending | NPR 5,693 billion | Dec 2025 |
+| CD Ratio | 74.08% | Dec 2025 |
+| Total Financial Institutions | 146 | FY 2025/26 Q4 |
+| Licensed BFIs | 107 | FY 2025/26 Q4 |
+| Total Branches | 11,516 | FY 2025/26 Q4 |
+| Broad Money Growth | 12.5% | FY 2025/26 Q4 |
+| Private Sector Credit Growth | 6.4% | FY 2025/26 Q4 |
+| Remittance Inflow | NPR 687 billion | FY 2025/26 Q4 |
+| Worker's Remittance % of GDP | 28.2% | FY 2024/25 |
+| National CPI Inflation | 1.11% | FY 2025/26 Q4 |
+
+**Note:** These are banking sector indicators, not payment system indicators. Payment system data is not displayed on the homepage.
+
+## NRB Fiscal Year Convention
+
+NRB uses the Nepali fiscal year: mid-July to mid-July.
+- FY 2024/25 = mid-July 2024 to mid-July 2025
+- FY 2025/26 = mid-July 2025 to mid-July 2026
+- Nepali calendar year = fiscal year + ~56/57 years (e.g., 2082 BS ≈ 2025/26 AD)
+
+This is important for date alignment when collecting monthly data.
+
 ## Verification Checklist
 
 Before Phase 3 (Data Engineering), verify:
 
-- [ ] NRB website is accessible
-- [ ] Payment System Statistics publication exists and format is documented
+- [ ] **CRITICAL:** NRB website is accessible again
+- [ ] **CRITICAL:** Locate the Payment System Statistics / Indicators publication — this is the PRIMARY data source
 - [ ] Exact variable breakdown is confirmed (which channels are reported separately)
 - [ ] Historical coverage is confirmed (how far back does monthly data go)
 - [ ] File format is confirmed (PDF, Excel, or web-only)
 - [ ] Data download method is documented
 - [ ] Any methodology changes over 2021–2026 are identified
+- [ ] Check if payment system data is embedded in the "Current Macroeconomic and Financial Situation" tables PDF
+- [ ] Verify whether NRB publishes an annual "Payment System Overview" or similar report
 
 ---
 
 ## Next Steps
 
-1. **Access NRB website** and locate Payment System Statistics
-2. **Verify exact publication format** (PDF tables, Excel files, web portal)
-3. **Download sample data** (most recent month) to confirm variable coverage
-4. **Map confirmed variables** to data dictionary
-5. **Update this inventory** with verified information
-6. **Begin data ingestion** (Phase 3)
+1. **Wait for NRB website to come back online** (currently returning 500 errors)
+2. **Locate the Payment System Statistics publication** — this is the single most important task
+3. **Check if payment system data is in the "Current Macroeconomic and Financial Situation" tables PDF** (2.2–2.5 MB files)
+4. **Verify exact publication format** (PDF tables, Excel files, web portal)
+5. **Download sample data** (most recent month) to confirm variable coverage
+6. **Map confirmed variables** to data dictionary
+7. **Update this inventory** with verified information
+8. **Begin data ingestion** (Phase 3)
 
 ---
 
-*Document status: PRELIMINARY. Based on known NRB publications. Requires verification against actual NRB website and publications. Do not treat as confirmed.*
+*Document status: PARTIALLY VERIFIED. NRB website down (500 errors as of Aug 2026). Verified via Wayback Machine: Monetary Policy ✅, Annual Report ✅, Macroeconomic Reports ✅, Payment System Directives ✅. Payment System Statistics publication NOT CONFIRMED — critical gap. Must verify when website is accessible.*
