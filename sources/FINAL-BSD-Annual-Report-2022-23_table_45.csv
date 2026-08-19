@@ -1,0 +1,26 @@
+0,1,2,3
+Statement of Profit or Loss,2021,2022,2023
+,,,
+Interest Income,"11,887.17","16,439.95","25,158.12"
+Interest Expense,"5,466.72","9,725.36","15,751.16"
+Net Interest Income,"6,420.44","6,714.59","9,406.95"
+Fees and commission income,953.78,968.76,"1,019.38"
+Fees and commission expense,67.35,81.81,188.31
+Net fee and commission income,886.43,886.94,831.07
+"Net interest, fee and commission income","7,306.87","7,601.53","10,238.02"
+Net trading income,456.85,198.14,78.64
+Other operating income,425.28,270.19,309.23
+Total operating income,"8,189.00","8,069.86","10,625.89"
+Impairment charge/(reversal) for loans and other losses,497.62,853.66,"1,113.35"
+Net operating income,"7,691.38","7,216.20","9,512.54"
+Personnel expenses,"2,353.46","2,451.90","3,885.52"
+Other operating expenses,813.08,787.73,916.77
+Depreciation and Amortization,177.18,339.10,375.92
+Operating Profit,"4,347.66","3,637.46","4,334.34"
+Non-operating income,224.76,219.33,77.26
+Non-operating expense,-,-,-
+Profit before income tax,"4,572.42","3,856.79","4,411.61"
+Income Tax Expense,,,-
+Current Tax,"1,275.94",983.65,"1,177.45"
+Deferred Tax,335.25,(50.14),(203.42)
+Profit for the period,"2,961.23","2,923.28","3,437.58"

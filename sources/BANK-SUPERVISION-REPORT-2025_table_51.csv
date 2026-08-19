@@ -1,0 +1,25 @@
+0,1,2,3
+STATEMENT OF PROFIT OR LOSS,FY 2022-23,FY 2023-24,FY 2024-25
+Interest income,"35,126.12","43,153.41","36,175.66"
+Interest expense,"22,819.02","28,036.49","(21,973.04)"
+Net interest income,"12,307.10","15,116.92","14,202.62"
+Fees and Commission income,"2,096.41","2,332.33","2,767.01"
+Fees and Commission expense,495.05,554.34,(563.78)
+Net fee and commission income,"1,601.35","1,777.99","2,203.24"
+"Net interest, fee and commission income","13,908.45","16,894.91","16,405.86"
+Net trading income,507.64,469.55,766.06
+Other operating income,352.48,408.08,480.56
+Total Operating Income,"14,768.57","17,772.54","17,652.48"
+Impairment charges/(reversals) for loans & other losses,"3,200.30","5,111.56","(4,375.38)"
+Net operating income,"11,568.27","12,660.98","13,277.10"
+Personnel Expenses,"3,036.30","3,768.83","(3,996.51)"
+Other Operating Expenses,"1,184.02","1,566.47","(1,610.78)"
+Depreciation and Amortization,712.32,933.22,(938.81)
+Operating profit,"6,635.63","6,392.45","6,731.00"
+Non operating income,2.27,4.37,36.29
+Non operating expense,"1,300.82",732.10,(568.50)
+Profit before income tax,"5,337.08","5,664.72","6,198.80"
+Income tax expense,-,-,-
+Current Tax,"2,292.93","3,297.35","(2,831.78)"
+Deferred Tax,(676.68),"(1,741.52)",965.27
+Profit for the year,"3,720.83","4,108.89","4,332.28"

@@ -1,0 +1,53 @@
+0,1,2,3
+12. Kumari Bank Limited,Amt. in Rs. Million,,
+Statement of Financial Position,2021-22,2022-23,2023-24
+ASSETS,,,
+Cash and cash equivalent,"17,609.89","19,921.48","19,581.64"
+Due from Nepal Rastra Bank,"5,475.31","13,460.94","28,158.09"
+Placement with Bank and Financial Institutions,"1,949.48","7,771.45","1,422.91"
+Derivative financial instruments,-,184.83,346.54
+Other trading assets,-,-,-
+Loan and advances to B/FIs,"5,846.26","9,754.31","10,745.45"
+Loans and advances to customers,"152,562.93","270,937.31","268,431.27"
+Investment securities,"22,815.09","42,696.60","64,635.15"
+Current tax assets,454.70,"1,389.77",600.00
+Investment in subsidiaries,420.00,600.00,"1,165.02"
+Investment in associates,185.02,"1,185.02","2,577.36"
+Investment property,144.49,"1,263.21","1,913.18"
+Property and equipment,"1,179.75","2,515.85","2,294.21"
+Goodwill and Intangible assets,161.44,188.67,219.59
+Deferred tax assets,-,63.03,108.63
+Other assets,"3,304.07","8,592.31","7,253.84"
+TOTAL ASSETS,"212,108.44","380,524.79","409,452.88"
+Liabilities,"191,106.32","345,209.98","374,649.68"
+Due to Bank and Financial Institutions,"6,194.53","9,233.57","14,717.41"
+Due to Nepal Rastra Bank,"1,345.59","1,496.50","3,729.50"
+Derivative financial instrument,39.33,170.10,350.04
+Deposits from customers,"176,767.67","316,047.05","333,111.32"
+Borrowing,-,"2,645.52","1,340.59"
+Current Tax Liabilities,-,-,-
+Provisions,2.50,3.00,3.00
+Deferred tax liabilities,75.21,-,-
+Other liabilities,"3,685.70","6,626.26","7,417.36"
+Debt securities issued,"2,995.80","8,987.97","13,980.46"
+Subordinated Liabilities,-,-,-
+Equity,"21,002.12","35,314.80","34,803.20"
+Share capital,"14,711.18","26,225.86","26,225.86"
+Share premium,88.80,-,-
+Retained earnings,"1,872.57","(2,202.91)","(5,367.42)"
+Reserves,"4,329.56","11,291.85","13,944.76"
+Total Liabilities and Equity,"212,108.44","380,524.79","409,452.88"
+,,,
+STATEMENT OF PROFIT OR LOSS,2021-22,2022-23,2023-24
+Interest Income,"18,355.16","34,112.24","38,609.37"
+Interest Expense,"12,137.99","23,046.06","27,806.03"
+Net Interest Income,"6,217.17","11,066.18","10,803.34"
+Fee and commission income,962.86,"1,784.93","2,437.61"
+Fee and commission expense,144.68,271.62,339.52
+Net Fee and commission income,818.17,"1,513.31","2,098.08"
+"Net Interest, Fee and commission income","7,035.34","12,579.49","12,901.43"
+Net trading income,377.87,363.04,366.41
+Other operating income,527.95,115.16,368.59
+Total operating income,"7,941.16","13,057.68","13,636.42"
+Impairment charge/(reversal) for loans and other losses,812.10,"8,115.80","6,841.41"
+Net operating income,"7,129.06","4,941.88","6,795.01"

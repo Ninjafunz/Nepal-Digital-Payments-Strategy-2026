@@ -1,0 +1,53 @@
+0,1,2,3
+12. Citizens Bank International Limited,Amount in Rs. Million,,
+Statement of Financial Position,2018-19,2019-20,2020-21
+ASSETS,,,
+Cash and cash equivalent,"6,740.70","9,646.95","11,563.04"
+Due from Nepal Rastra Bank,"2,596.97","19,972.67","3,796.49"
+Placement with Bank and Financial Institutions,394.77,"3,125.20","2,874.87"
+Derivative financial instruments,44.10,14.54,47.01
+Other trading assets,567.25,-,596.89
+Loan and advances to B/FIs,"1,581.90","6,857.50","3,247.17"
+Loans and advances to customers,"62,911.97","112,211.74","118,912.04"
+Investment securities,"10,822.60","28,813.51","22,017.42"
+Current tax assets,14.62,-,288.46
+Investment in subsidiaries,167.20,379.02,167.20
+Investment in associates,17.95,226.71,16.00
+Investment property,222.55,21.04,141.15
+Property and equipment,"2,302.85","2,151.05","2,880.20"
+Goodwill and Intangible assets,93.35,46.14,83.56
+Deferred tax assets,20.24,-,-
+Other assets,"1,622.34","1,557.12","1,697.54"
+TOTAL ASSETS,"90,121.36","185,023.19","168,329.05"
+,,,
+Liabilities,"77,626.74","166,385.83","149,441.03"
+Due to Bank and Financial Institutions,"3,926.66","1,182.83","2,765.00"
+Due to Nepal Rastra Bank,"1,212.59",32.89,"1,205.56"
+Derivative financial instruments,,-,-
+Deposits from customers,"70,509.08","143,545.48","140,638.41"
+Borrowing,,-,-
+Current Tax Liabilities,,-,-
+Provisions,5.31,-,5.31
+Deferred tax liabilities,,127.37,217.49
+Other liabilities,"1,473.95","20,428.42","2,133.18"
+Debt securities issued,499.15,"1,068.85","2,476.08"
+Subordinated Liabilities,,-,-
+Equity,"12,494.62","18,637.36","18,888.02"
+Share capital,"8,371.06","8,510.21","12,576.92"
+Share premium,46.82,238.47,-
+Retained earnings,"1,251.27","1,793.07","1,422.78"
+Reserves,"2,825.47","8,095.61","4,888.32"
+TOTAL EQUITY AND LIABILITIES,"90,121.36","185,023.19","168,329.05"
+,,,0.00
+STATEMENT OF PROFIT OR LOSS,2018-19,2019-20,2020-21
+Interest Income,"8,532.28","13,956.19","10,839.53"
+Interest Expenses,"5,843.82","8,645.78","7,189.14"
+Net Interest Income,"2,688.46","5,310.41","3,650.40"
+Fee and commission income,568.57,"1,144.66",825.37
+Fee and commission expense,67.39,128.50,73.36
+Net Fee and commission income,501.18,"1,016.15",752.01
+"Net Interest, Fee and commission income","3,189.64","6,326.56","4,402.41"
+Net trading income,277.32,263.57,418.47
+Other operating income,30.47,122.21,153.11
+Total operating income,"3,497.43","6,712.34","4,973.98"
+Impairment charge/(reversal) for loans and other losses,138.37,548.47,394.04

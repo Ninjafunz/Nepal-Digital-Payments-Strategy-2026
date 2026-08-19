@@ -1,0 +1,52 @@
+0,1,2,3
+14. Siddhartha Bank Limited,Amt. in Rs. Million,,
+Statement of Financial Position,2021-22,2022-23,2023-24
+ASSETS,,,
+Cash and cash equivalent,"7,928.99","11,554.08","22,739.73"
+Due from Nepal Rastra Bank,"5,730.45","9,000.71","9,453.75"
+Placement with Bank and Financial Institutions,320.31,"5,011.35","6,562.12"
+Derivative financial instruments,19.69,17.32,4.98
+Other trading assets,-,-,19.00
+Loan and advances to B/FIs,"6,403.39","5,170.77","5,767.82"
+Loans and advances to customers,"178,587.36","184,009.57","195,473.38"
+Investment securities,"57,368.16","62,480.48","47,978.96"
+Current tax assets,221.07,263.76,51.00
+Investment in subsidiaries,51.00,51.00,-
+Investment in associates,-,-,217.84
+Investment property,213.31,654.54,727.57
+Property and equipment,"3,077.07","3,548.09","3,495.83"
+Goodwill and Intangible assets,71.49,166.00,146.15
+Deferred tax assets,-,-,-
+Other assets,"4,334.73","4,050.24","4,703.29"
+TOTAL ASSETS,"264,327.02","285,977.92","297,341.42"
+Liabilities,"242,729.15","260,671.32","269,272.12"
+Due to Bank and Financial Institutions,"7,234.64","11,613.66","3,578.16"
+Due to Nepal Rastra Bank,"24,965.10",288.45,391.92
+Derivative financial instruments,19.36,23.89,3.98
+Deposits from customers,"191,550.64","223,654.67","241,329.08"
+Borrowing,"1,022.80","7,312.48","5,964.38"
+Current Tax Liabilities,-,-,-
+Provisions,-,-,-
+Deferred tax liabilities,239.22,501.93,669.64
+Other liabilities,"6,034.82","5,613.69","5,672.40"
+Debt securities issued,"11,662.56","11,662.56","11,662.56"
+Subordinated Liabilities,-,-,-
+Equity,"21,597.87","25,306.59","28,069.29"
+Share capital,"12,524.43","14,089.98","14,089.98"
+Share premium,-,-,-
+Retained earnings,"1,359.87",663.61,580.36
+Reserves,"7,713.58","10,553.00","13,398.95"
+Total Liabilities and Equity,"264,327.02","285,977.92","297,341.42"
+,,,
+STATEMENT OF PROFIT OR LOSS,2021-22,2022-23,2023-24
+Interest Income,"20,677.56","27,670.97","25,716.03"
+Interest Expenses,"14,080.72","19,486.42","17,785.96"
+Net Interest Income,"6,596.85","8,184.54","7,930.07"
+Fee and commission income,"1,505.59","1,693.08","1,815.39"
+Fee and commission expense,285.89,347.46,389.05
+Net Fee and commission income,"1,219.70","1,345.62","1,426.33"
+"Net Interest, Fee and commission income","7,816.55","9,530.16","9,356.40"
+Net trading income,442.93,191.74,239.84
+Other operating income,532.49,336.33,381.05
+Total operating income,"8,791.97","10,058.23","9,977.30"
+Impairment charge/(reversal) for loans and other losses,607.47,"1,187.56","1,051.12"

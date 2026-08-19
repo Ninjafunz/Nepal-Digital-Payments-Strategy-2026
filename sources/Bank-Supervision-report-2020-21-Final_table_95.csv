@@ -1,0 +1,53 @@
+0,1,2,3
+26.  Rastriya Banijya Bank,Amount in Rs. Million,,
+Statement of Financial Position,2018-19,2019-20,2020-21
+ASSETS,,,
+Cash and cash equivalent,"27,028.52","7,093.86","15,735.16"
+Due from Nepal Rastra Bank,"15,772.41","17,934.76","20,128.50"
+Placement with Bank and Financial Institutions,-,48.12,-
+Derivative financial instruments,-,-,1.50
+Other trading assets,-,-,-
+Loan and advances to B/FIs,"4,554.44","4,456.75","15,434.07"
+Loans and advances to customers,"144,454.64","150,797.85","177,870.98"
+Investment securities,"21,136.97","74,769.66","71,061.22"
+Current tax assets,"1,882.58","2,648.12","3,341.89"
+Investment in subsidiaries,200.00,200.00,200.00
+Investment in associates,202.01,97.86,206.11
+Investment property,114.81,109.38,124.57
+Property and equipment,"1,068.69","1,555.72","1,844.29"
+Goodwill and Intangible assets,53.85,42.89,57.87
+Deferred tax assets,341.10,647.03,-
+Other assets,"13,707.61","6,364.26","3,981.29"
+TOTAL ASSETS,"230,517.62","266,766.26","309,987.46"
+,,,
+Liabilities,"206,975.13","243,736.72","281,313.16"
+Due to Bank and Financial Institutions,"7,953.35","2,278.45","2,369.24"
+Due to Nepal Rastra Bank,352.04,281.07,"3,794.08"
+Derivative financial instruments,-,-,-
+Deposits from customers,"190,031.47","230,902.64","263,836.77"
+Borrowing,60.49,60.06,60.00
+Current Tax Liabilities,-,-,-
+Provisions,-,375.14,436.94
+Deferred tax liabilities,-,-,847.76
+Other liabilities,"8,577.78","9,839.36","7,450.91"
+Debt securities issued,-,-,"2,517.47"
+Subordinated Liabilities,-,-,-
+Equity,"23,542.49","23,029.54","28,674.30"
+Share capital,"9,004.79","9,004.80","10,184.89"
+Share premium,-,-,-
+Retained earnings,800.94,761.61,"3,453.80"
+Reserves,"13,736.75","13,263.13","15,035.60"
+TOTAL EQUITY AND LIABILITIES,"230,517.62","266,766.26","309,987.46"
+,,,
+STATEMENT OF PROFIT OR LOSS,2018-19,2019-20,2020-21
+Interest Income,"15,204.45","17,160.17","16,229.11"
+Interest Expenses,"4,974.94","7,711.77","8,019.66"
+Net Interest Income,"10,229.51","9,448.40","8,209.45"
+Fee and commission income,"1,453.28",828.48,978.00
+Fee and commission expense,141.05,174.58,258.24
+Net Fee and commission income,"1,312.23",653.90,719.76
+"Net Interest, Fee and commission income","11,541.74","10,102.30","8,929.21"
+Net trading income,69.35,54.73,161.28
+Other operating income,120.58,541.22,633.44
+Total operating income,"11,731.67","10,698.26","9,723.93"
+Impairment charge/(reversal) for loans and other losses,452.42,160.53,723.38

@@ -1,0 +1,51 @@
+0,1,2,3
+16. Citizens Bank International Limited,Amt. in Rs. Million,,
+Statement of Financial Position,2021-22,2022-23,2023-24
+ASSETS,,,
+Cash and cash equivalent,"17,892.74","9,764.25","11,103.50"
+Due from Nepal Rastra Bank,"4,266.51","6,703.01","6,678.17"
+Placement with Bank and Financial Institutions,"1,233.63","2,236.41","1,752.86"
+Derivative financial instruments,2.66,17.05,4.10
+Other trading assets,327.34,318.87,334.69
+Loan and advances to B/FIs,"3,299.92","2,510.67","1,821.14"
+Loans and advances to customers,"131,344.33","139,832.01","153,343.65"
+Investment securities,"28,153.43","28,685.57","36,283.86"
+Current tax assets,348.14,283.95,317.20
+Investment in subsidiaries,167.20,317.20,364.71
+Investment in associates,375.65,330.01,452.99
+Investment property,208.65,256.13,821.26
+Property and equipment,"3,704.21","3,757.65","4,297.55"
+Goodwill and Intangible assets,196.84,179.52,194.14
+Deferred tax assets,-,62.80,24.49
+Other assets,"2,891.41","3,677.52","4,887.93"
+TOTAL ASSETS,"194,412.65","198,932.61","222,682.23"
+Liabilities,"174,003.36","177,969.09","201,107.86"
+Due to Bank and Financial Institutions,"4,063.05","3,714.71","2,438.00"
+Due to Nepal Rastra Bank,"11,070.25",-,-
+Derivative financial instruments,-,-,-
+Deposits from customers,"152,801.49","168,842.14","189,236.67"
+Borrowing,-,-,-
+Current Tax Liabilities,-,-,-
+Provisions,5.31,5.31,5.31
+Deferred tax liabilities,63.31,-,-
+Other liabilities,"3,522.07","2,927.09","3,960.09"
+Debt securities issued,"2,477.88","2,479.85","5,467.79"
+Subordinated Liabilities,-,-,-
+Equity,"20,409.29","20,963.52","21,574.37"
+Share capital,"14,200.97","14,200.97","14,200.97"
+Share premium,-,-,-
+Retained earnings,"1,329.46",846.99,613.24
+Reserves,"4,878.85","5,915.56","6,760.15"
+Total Liabilities and Equity,"194,412.65","198,932.61","222,682.23"
+,,,
+STATEMENT OF PROFIT OR LOSS,2021-22,2022-23,2023-24
+Interest Income,"15,967.65","20,660.83","19,719.67"
+Interest Expenses,"10,974.16","14,832.33","13,995.85"
+Net Interest Income,"4,993.49","5,828.50","5,723.82"
+Fee and commission income,998.10,"1,013.99","1,279.68"
+Fee and commission expense,129.04,137.21,154.71
+Net Fee and commission income,869.07,876.78,"1,124.97"
+"Net Interest, Fee and commission income","5,862.56","6,705.28","6,848.79"
+Net trading income,224.28,182.20,156.06
+Other operating income,177.23,23.58,52.09
+Total operating income,"6,264.06","6,911.06","7,056.93"

@@ -1,0 +1,51 @@
+0,1,2,3
+20. Sanima Bank Limited,Amt. in Rs. Million,,
+Statement of Financial Position,2021-22,2022-23,2023-24
+ASSETS,,,
+Cash and cash equivalent,"5,224.72","5,290.59","13,072.49"
+Due from Nepal Rastra Bank,"13,516.14","10,368.10","14,237.36"
+Placement with Bank and Financial Institutions,371.16,"1,056.57",591.04
+Derivative financial instruments,-,-,-
+Other trading assets,500.75,414.84,319.68
+Loan and advances to B/FIs,"5,167.87","4,445.16","5,527.77"
+Loans and advances to customers,"136,518.04","145,424.94","159,414.74"
+Investment securities,"26,468.40","41,980.22","34,082.39"
+Current tax assets,-,54.54,450.00
+Investment in subsidiaries,250.00,450.00,-
+Investment in associates,-,-,1.66
+Investment property,72.93,190.17,674.00
+Property and equipment,"1,344.61","1,368.38","1,395.43"
+Goodwill and Intangible assets,88.27,96.08,81.63
+Deferred tax assets,138.05,169.78,248.73
+Other assets,"2,850.17","4,333.62","3,765.28"
+TOTAL ASSETS,"192,511.09","215,642.99","233,862.21"
+Liabilities,"175,599.92","196,263.56","212,938.56"
+Due to bank and financial institutions,"2,614.42","5,091.31","2,182.16"
+Due to Nepal Rastra Bank,"4,096.65",72.09,-
+Derivative financial instruments,52.39,6.05,1.89
+Deposits from customers,"157,518.54","175,745.25","197,197.07"
+Borrowing,"1,279.00","2,629.00","1,070.00"
+Current Tax Liabilities,35.22,-,-
+Provisions,44.77,34.26,36.44
+Deferred tax liabilities,-,-,-
+Other liabilities,"3,146.61","3,311.94","3,073.48"
+Debt securities issued,"6,812.32","9,373.67","9,377.52"
+Subordinated Liabilities,-,-,-
+Equity,"16,911.17","19,379.43","20,923.65"
+Share capital,"11,327.38","12,460.12","13,581.53"
+Share premium,-,-,-
+Retained earnings,"1,244.46","2,215.04","1,447.34"
+Reserves,"4,339.34","4,704.28","5,894.79"
+Total Liabilities and Equity,"192,511.09","215,642.99","233,862.21"
+STATEMENT OF PROFIT OR LOSS,2021-22,2022-23,2023-24
+Interest Income,"14,850.22","21,607.17","20,724.07"
+Interest Expense,"10,198.45","15,128.55","14,542.37"
+Net Interest Income,"4,651.76","6,478.62","6,181.70"
+Fee and commission income,995.91,"1,039.86","1,194.85"
+Fee and commission expense,148.36,242.16,175.85
+Net Fee and commission income,847.55,797.70,"1,019.01"
+"Net Interest, Fee and commission income","5,499.31","7,276.32","7,200.70"
+Net trading income,377.68,217.27,517.77
+Other operating income,152.71,158.21,210.56
+Total operating income,"6,029.70","7,651.80","7,929.03"
+Impairment charge/(reversal) for loans and other losses,554.39,"1,053.11","1,433.32"

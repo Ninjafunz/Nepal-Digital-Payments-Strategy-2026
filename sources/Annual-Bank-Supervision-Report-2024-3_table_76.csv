@@ -1,0 +1,51 @@
+0,1,2,3
+18. NMB Bank Limited,Amt. in Rs. Million,,
+Statement of Financial Position,2021-22,2022-23,2023-24
+ASSETS,,,
+Cash and cash equivalent,"12,787.64","23,958.28","22,570.60"
+Due from Nepal Rastra Bank,"13,747.31","15,059.50","14,710.49"
+Placement with Bank and Financial Institutions,"3,782.29",755.85,"3,035.77"
+Derivative financial instruments,"5,293.77","10,850.08","7,583.92"
+Other trading assets,-,24.75,-
+Loan and advances to B/FIs,"5,920.09","7,116.53","8,130.44"
+Loans and advances to customers,"174,948.36","189,035.40","194,304.19"
+Investment securities,"31,724.85","32,374.91","33,772.80"
+Current tax assets,55.33,44.95,772.49
+Investment in subsidiaries,372.49,772.49,-
+Investment in associates,-,-,145.04
+Investment property,295.16,697.71,851.44
+Property and equipment,"1,764.13","1,752.80","3,758.59"
+Goodwill and Intangible assets,226.51,178.69,148.63
+Deferred tax assets,338.96,448.41,424.64
+Other assets,"3,893.71","4,706.80","4,659.14"
+TOTAL ASSETS,"255,150.61","287,777.14","294,868.16"
+Liabilities,"228,279.65","259,342.72","265,896.65"
+Due to Bank and Financial Institutions,"2,082.44","2,737.26","3,163.18"
+Due to Nepal Rastra Bank,"8,996.37","3,285.99","2,948.95"
+Derivative financial instrument,"5,351.10","11,060.34","7,710.80"
+Deposits from customers,"184,817.11","210,304.69","223,942.59"
+Borrowing,"12,997.40","14,814.90","11,552.66"
+Current Tax Liabilities,-,-,-
+Provisions,-,-,-
+Deferred tax liabilities,-,-,-
+Other liabilities,"5,907.39","5,227.60","4,196.47"
+Debt securities issued,"8,127.85","11,911.94","12,382.00"
+Subordinated Liabilities,-,-,-
+Equity,"26,870.96","28,434.42","28,971.51"
+Share capital,"18,366.71","18,366.71","18,366.71"
+Share premium,-,-,-
+Retained earnings,"1,550.78","1,140.83",(93.84)
+Reserves,"6,953.47","8,926.89","10,698.65"
+Total Liabilities and Equity,"255,150.61","287,777.14","294,868.16"
+,,,
+STATEMENT OF PROFIT OR LOSS,2021-22,2022-23,2023-24
+Interest Income,"19,168.86","26,622.46","25,682.54"
+Interest Expense,"12,781.32","18,280.00","18,465.80"
+Net Interest Income,"6,387.54","8,342.46","7,216.74"
+Fee and commission income,"1,689.47","1,833.47","1,987.21"
+Fee and commission expense,216.24,286.61,311.23
+Net Fee and commission income,"1,473.23","1,546.86","1,675.97"
+"Net Interest, Fee and commission income","7,860.77","9,889.32","8,892.72"
+Net trading income,272.41,236.29,242.41
+Other operating income,406.77,204.15,264.01
+Total operating income,"8,539.94","10,329.75","9,399.14"
