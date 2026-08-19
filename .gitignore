@@ -1,0 +1,51 @@
+# Nepal Digital Payments Strategy — .gitignore
+
+# === Raw Data ===
+# Raw data files are tracked for provenance but large binaries may be excluded
+data/raw/*.pdf
+data/raw/*.xlsx
+data/raw/*.xls
+
+# === Database ===
+# Database files are generated — track schema, not the db itself
+database/*.db
+database/*.db-journal
+database/*.db-wal
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# === Jupyter ===
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === Logs ===
+*.log
+
+# === Environment Variables ===
+.env
+.env.local
