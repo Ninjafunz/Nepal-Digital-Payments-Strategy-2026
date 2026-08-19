@@ -2,7 +2,7 @@
 
 ## The Transformation of Nepal's Digital Payments Industry, 2021–2026
 
-**MSc Strategy Research Project**
+**Research Project**
 
 ---
 
