@@ -11,9 +11,24 @@ then skips FY total columns when reading B1/B2.
 """
 import openpyxl
 import csv
+import os
 
-XLSX_PATH = 'sources/NRB_PSD_Sep2025_REAL.xlsx'
-OUTPUT_PATH = 'data/raw/NRB_Payment_Systems_Indicators_monthly_v2.csv'
+XLSX_CANDIDATES = [
+    'sources/NRB_PSD_Sep2025_REAL.xlsx',
+]
+OUTPUT_PATH = 'data/raw/NRB_Payment_Systems_Indicators_monthly.csv'
+
+def resolve_xlsx():
+    for path in XLSX_CANDIDATES:
+        if os.path.isfile(path):
+            return path
+    return None
+
+KNOWN_SOURCE_FRACTIONS = {
+    ('Wallet_Users', '2078 Mangsir'),
+    ('Mobile_Banking_Count', '2081 Asoj'),
+    ('QR_Count', '2081 Asoj'),
+}
 
 BS_TO_AD_MONTH = {
     'Baisakh': 4, 'Jestha': 5, 'Asar': 6, 'Saun': 7,
@@ -31,20 +46,40 @@ def get_monthly_col_indices(header_row):
     indices = []
     for i, cell in enumerate(header_row):
         v = cell.value
-        if v is not None and v not in ('Particulars', 'Particulars ') and 'FY' not in str(v):
-            indices.append(i)
+        if v is None:
+            continue
+        text = str(v).strip()
+        if text.lower().startswith('particular') or 'FY' in str(v):
+            continue
+        indices.append(i)
     return indices
 
+XLSX_PATH = resolve_xlsx()
+if XLSX_PATH is None:
+    raise SystemExit(
+        'No NRB DataPSD workbook found. Restore sources/NRB_PSD_Sep2025_REAL.xlsx '
+        'or add its path to XLSX_CANDIDATES. Refusing to overwrite the corrected CSV.'
+    )
+
 wb = openpyxl.load_workbook(XLSX_PATH, data_only=True)
+if 'DataPSD' not in wb.sheetnames:
+    raise SystemExit(f'{XLSX_PATH} has no DataPSD sheet. Sheets: {wb.sheetnames}')
 ws = wb['DataPSD']
+print(f'Source workbook: {XLSX_PATH}')
 
 # === Build canonical month list from Section A (no FY totals) ===
 a_header = [ws.cell(row=4, column=c).value for c in range(1, ws.max_column + 1)]
 months = []
 for i, v in enumerate(a_header):
-    if v and v != 'Particulars ':
-        parts = v.strip().split()
-        months.append({'col_a': i, 'bs_year': int(parts[0]), 'bs_month': parts[1]})
+    if not v:
+        continue
+    text = str(v).strip()
+    if text.lower().startswith('particular'):
+        continue
+    parts = text.split()
+    if len(parts) < 2:
+        continue
+    months.append({'col_a': i, 'bs_year': int(parts[0]), 'bs_month': parts[1]})
 
 print(f'Months: {len(months)} ({months[0]["bs_year"]} {months[0]["bs_month"]} to {months[-1]["bs_year"]} {months[-1]["bs_month"]})')
 
@@ -166,11 +201,17 @@ with open(OUTPUT_PATH, 'r') as f:
                 try:
                     fv = float(v)
                     if fv != int(fv):
-                        print(f'  FRACTIONAL COUNT: {count_field} @ {row["date_bs"]} = {v}')
-                        errors += 1
-                except:
+                        key = (count_field, row['date_bs'])
+                        if key in KNOWN_SOURCE_FRACTIONS:
+                            print(f'  KNOWN NRB FRACTION: {count_field} @ {row["date_bs"]} = {v}')
+                        else:
+                            print(f'  UNEXPECTED FRACTIONAL COUNT: {count_field} @ {row["date_bs"]} = {v}')
+                            errors += 1
+                except ValueError:
                     pass
 
 if errors == 0:
-    print('  All count fields are clean integers (or fractional only where NRB source has fractions)')
+    print('  Count fields are integers except the documented NRB source fractions.')
+else:
+    print(f'  Validation failures: {errors}')
 print(f'\nDone.')

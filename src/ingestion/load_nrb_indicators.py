@@ -21,6 +21,7 @@ for ch in [('rtgs','RTGS','infrastructure'),('atm','ATM Cash Withdrawal','cash')
 c.execute("INSERT INTO sources VALUES ('NRB_PSD001','NRB','Payment Systems Indicators XLSX (Sep 2025 snapshot)','2025-09',1,'High','Extracted from Wayback Machine. Monthly data Jul 2020 - Jul 2025.')")
 
 def si(v):
+    """Parse a count. Truncates NRB source fractions (see data_quality_report.md)."""
     if not v or v == '': return None
     try: return int(float(v))
     except: return None

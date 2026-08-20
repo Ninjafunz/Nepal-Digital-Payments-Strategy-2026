@@ -27,6 +27,12 @@ COLORS = {
     'other_retail': '#9E9E9E',
 }
 
+# ATM cash, ECC (cheques), and RTGS are not retail electronic payments.
+DIGITAL_RETAIL_WHERE = "channel_code NOT IN ('atm', 'ecc', 'rtgs')"
+
+print("Note: summing NRB channels can double-count overlapping rails (e.g. QR and wallet).")
+print("Calendar years are Gregorian labels of date_ad, not Nepal fiscal years.")
+
 # ============================================================
 # ANALYSIS 1: Is Nepal Becoming More Digital?
 # ============================================================
@@ -34,13 +40,13 @@ print("=" * 60)
 print("ANALYSIS 1: Is Nepal Becoming More Digital?")
 print("=" * 60)
 
-# Total transaction count and value per month
-data1 = q("""
+# Retail-electronic monthly totals (excludes ATM cash, ECC, RTGS)
+data1 = q(f"""
     SELECT date_ad, 
            SUM(transaction_count) as total_count,
            SUM(transaction_value_npr_millions) as total_value
     FROM monthly_payment_metrics
-    WHERE transaction_count IS NOT NULL
+    WHERE transaction_count IS NOT NULL AND {DIGITAL_RETAIL_WHERE}
     GROUP BY date_ad
     ORDER BY date_ad
 """)
@@ -49,30 +55,50 @@ dates = [r[0] for r in data1]
 counts = [r[1] for r in data1]
 values = [r[2] for r in data1]
 
-# Annual totals
-annual = q("""
-    SELECT SUBSTR(date_ad, 1, 4) as year,
-           SUM(transaction_count) as total_count,
-           SUM(transaction_value_npr_millions) as total_value
-    FROM monthly_payment_metrics
-    WHERE transaction_count IS NOT NULL AND SUBSTR(date_ad,1,4) >= '2021'
-    GROUP BY year ORDER BY year
-""")
+def annual_totals(extra_where=''):
+    return q(f"""
+        SELECT SUBSTR(date_ad, 1, 4) as year,
+               SUM(transaction_count) as total_count,
+               SUM(transaction_value_npr_millions) as total_value
+        FROM monthly_payment_metrics
+        WHERE transaction_count IS NOT NULL AND SUBSTR(date_ad,1,4) >= '2021'
+          {extra_where}
+        GROUP BY year ORDER BY year
+    """)
 
-print("\nAnnual totals:")
-print(f"{'Year':>6} | {'Txn Count (B)':>15} | {'Txn Value (B NPR)':>18}")
-print("-" * 45)
-for r in annual:
-    print(f"{r[0]:>6} | {r[1]/1e9:>15.2f} | {r[2]/1e3:>18.1f}")
+annual_all = annual_totals()
+annual_retail = annual_totals(f'AND {DIGITAL_RETAIL_WHERE}')
 
-# CAGR
-if len(annual) >= 2:
-    y0, y1 = annual[0], annual[-1]
-    years = int(y1[0]) - int(y0[0])
-    cagr_count = ((y1[1]/y0[1])**(1/years) - 1) * 100
-    cagr_value = ((y1[2]/y0[2])**(1/years) - 1) * 100
-    print(f"\nCAGR (count): {cagr_count:.1f}%")
-    print(f"CAGR (value): {cagr_value:.1f}%")
+print("\nAnnual totals — ALL NRB channels (incl. ATM cash, ECC, RTGS):")
+print(f"{'Year':>6} | {'Txn Count (B)':>15} | {'Txn Value (B NPR)':>18} | Note")
+print("-" * 70)
+for r in annual_all:
+    note = 'partial (Jan–Jul)' if r[0] == '2025' else 'full calendar year'
+    print(f"{r[0]:>6} | {r[1]/1e9:>15.2f} | {r[2]/1e3:>18.1f} | {note}")
+
+print("\nAnnual totals — digital retail (excl. ATM, ECC, RTGS):")
+print(f"{'Year':>6} | {'Txn Count (B)':>15} | {'Txn Value (B NPR)':>18} | Note")
+print("-" * 70)
+for r in annual_retail:
+    note = 'partial (Jan–Jul)' if r[0] == '2025' else 'full calendar year'
+    print(f"{r[0]:>6} | {r[1]/1e9:>15.2f} | {r[2]/1e3:>18.1f} | {note}")
+
+# CAGR on full calendar years only (2021–2024)
+full_years = [r for r in annual_all if r[0] in ('2021', '2022', '2023', '2024')]
+if len(full_years) >= 2:
+    y0, y1 = full_years[0], full_years[-1]
+    n_years = int(y1[0]) - int(y0[0])
+    cagr_count = ((y1[1]/y0[1])**(1/n_years) - 1) * 100
+    cagr_value = ((y1[2]/y0[2])**(1/n_years) - 1) * 100
+    print(f"\nCAGR all-channel 2021–2024 (count): {cagr_count:.1f}%")
+    print(f"CAGR all-channel 2021–2024 (value): {cagr_value:.1f}%")
+
+full_retail = [r for r in annual_retail if r[0] in ('2021', '2022', '2023', '2024')]
+if len(full_retail) >= 2:
+    y0, y1 = full_retail[0], full_retail[-1]
+    n_years = int(y1[0]) - int(y0[0])
+    print(f"CAGR digital-retail 2021–2024 (count): {((y1[1]/y0[1])**(1/n_years) - 1)*100:.1f}%")
+    print(f"CAGR digital-retail 2021–2024 (value): {((y1[2]/y0[2])**(1/n_years) - 1)*100:.1f}%")
 
 # Chart 1: Total digital transactions over time
 fig, ax1 = plt.subplots(figsize=(14, 6))
@@ -87,7 +113,7 @@ ax1.set_xticks(x[::6])
 ax1.set_xticklabels([dates[i] for i in range(0, len(dates), 6)], rotation=45)
 ax1.legend(loc='upper left')
 ax2.legend(loc='upper right')
-plt.title('Nepal Digital Payment Volume and Value (Jul 2020 - Jul 2025)\nSource: NRB Payment Systems Indicators (NRB_PSD001)')
+plt.title('Nepal Digital Retail Payment Volume and Value (Jul 2020 - Jul 2025)\nExcludes ATM cash, ECC, RTGS. Source: NRB Payment Systems Indicators (NRB_PSD001)')
 plt.tight_layout()
 plt.savefig('analysis/charts/01_total_digital_growth.png', dpi=150)
 plt.close()
@@ -101,15 +127,19 @@ print("ANALYSIS 2: Which Payment Channels Are Winning?")
 print("=" * 60)
 
 # Channel value shares for key channels
-channels_of_interest = ['wallet', 'mobile_banking', 'qr', 'debit_card', 'pos', 'credit_card', 'internet_banking', 'atm']
+channels_of_interest = [
+    'connectips', 'ips', 'faster_payment', 'other_retail',
+    'mobile_banking', 'wallet', 'qr', 'debit_card', 'pos', 'credit_card', 'internet_banking',
+]
 
-# Annual value by channel
-ch_annual = q("""
+# Annual value by channel — digital retail only (RTGS/ECC/ATM would dominate the denominator)
+ch_annual = q(f"""
     SELECT SUBSTR(date_ad, 1, 4) as year, channel_code,
            SUM(transaction_value_npr_millions) as total_value,
            SUM(transaction_count) as total_count
     FROM monthly_payment_metrics
     WHERE transaction_value_npr_millions IS NOT NULL AND SUBSTR(date_ad,1,4) >= '2021'
+      AND {DIGITAL_RETAIL_WHERE}
     GROUP BY year, channel_code ORDER BY year, channel_code
 """)
 
@@ -122,7 +152,7 @@ for year, ch, val, cnt in ch_annual:
     pivot_count[ch][year] = cnt
 
 years = sorted(set(r[0] for r in ch_annual))
-print(f"\nChannel value shares (% of total) by year:")
+print(f"\nChannel value shares (% of digital-retail value) by calendar year:")
 print(f"{'Channel':>20}", end='')
 for y in years: print(f" | {y:>8}", end='')
 print()
@@ -137,17 +167,20 @@ for ch in channels_of_interest:
     print()
 
 # Chart 2: Channel value shares stacked area
+shown = ['connectips', 'ips', 'faster_payment', 'other_retail', 'mobile_banking', 'wallet', 'qr', 'debit_card']
 fig, ax = plt.subplots(figsize=(14, 7))
 bottom = np.zeros(len(years))
-for ch in ['mobile_banking', 'wallet', 'qr', 'debit_card', 'pos', 'credit_card', 'internet_banking', 'atm']:
+totals = [sum(pivot_value[c].get(y, 0) for c in pivot_value) for y in years]
+for ch in shown:
     vals = [pivot_value[ch].get(y, 0) for y in years]
-    totals = [sum(pivot_value[c].get(y, 0) for c in pivot_value) for y in years]
     shares = [v/t*100 if t > 0 else 0 for v, t in zip(vals, totals)]
     ax.bar(years, shares, bottom=bottom, label=ch.replace('_',' ').title(), color=COLORS.get(ch, '#999'))
     bottom += np.array(shares)
-ax.set_ylabel('Share of Total Digital Transaction Value (%)')
-ax.set_xlabel('Fiscal Year')
-ax.set_title('Payment Channel Value Shares Over Time\nSource: NRB Payment Systems Indicators (NRB_PSD001)')
+remainder = np.maximum(100 - bottom, 0)
+ax.bar(years, remainder, bottom=bottom, label='Other', color='#BDBDBD')
+ax.set_ylabel('Share of Digital-Retail Transaction Value (%)')
+ax.set_xlabel('Calendar Year (Gregorian label of date_ad)')
+ax.set_title('Payment Channel Value Shares Over Time (digital retail)\nSource: NRB Payment Systems Indicators (NRB_PSD001)')
 ax.legend(loc='upper right', fontsize=8)
 plt.tight_layout()
 plt.savefig('analysis/charts/02_channel_value_shares.png', dpi=150)
@@ -224,8 +257,8 @@ for ch in ['mobile_banking', 'wallet']:
     d = engage_data[ch]
     if d['tpu']:
         print(f"\n{ch.upper()}:")
-        print(f"  Transactions/user (first): {d['tpu'][0]:.2f}")
-        print(f"  Transactions/user (last):  {d['tpu'][-1]:.2f}")
+        print(f"  Transactions/user ({d['dates'][0]}): {d['tpu'][0]:.2f}")
+        print(f"  Transactions/user ({d['dates'][-1]}):  {d['tpu'][-1]:.2f}")
         if d['atv']:
             print(f"  Avg txn value NPR (first): {d['atv'][0]:,.0f}")
             print(f"  Avg txn value NPR (last):  {d['atv'][-1]:,.0f}")
@@ -262,14 +295,15 @@ print("\nChart saved: analysis/charts/03_user_engagement.png")
 # ANALYSIS 4: Is the Market Concentrating? (HHI)
 # ============================================================
 print("\n" + "=" * 60)
-print("ANALYSIS 4: Is the Market Concentrating?")
+print("ANALYSIS 4: Is Channel Mix Concentrating? (not firm-level HHI)")
 print("=" * 60)
 
-hhi_data = q("""
+hhi_data = q(f"""
     SELECT SUBSTR(date_ad, 1, 4) as year, channel_code,
            SUM(transaction_value_npr_millions) as total_value
     FROM monthly_payment_metrics
     WHERE transaction_value_npr_millions IS NOT NULL AND SUBSTR(date_ad,1,4) >= '2021'
+      AND {DIGITAL_RETAIL_WHERE}
     GROUP BY year, channel_code
 """)
 hhi_by_year = defaultdict(dict)
@@ -298,8 +332,8 @@ ax.plot(hhi_years, hhi_vals, 'o-', color='#3F51B5', linewidth=2, markersize=8)
 ax.axhline(y=1500, color='orange', linestyle='--', alpha=0.7, label='Moderate concentration (1500)')
 ax.axhline(y=2500, color='red', linestyle='--', alpha=0.7, label='High concentration (2500)')
 ax.set_ylabel('HHI (0-10000)')
-ax.set_xlabel('Fiscal Year')
-ax.set_title('Market Concentration (HHI) by Channel Value Share\nSource: NRB Payment Systems Indicators (NRB_PSD001)')
+ax.set_xlabel('Calendar Year (Gregorian label of date_ad)')
+ax.set_title('Channel-Mix HHI (digital retail rails; not firm concentration)\nExcludes ATM, ECC, RTGS. Source: NRB Payment Systems Indicators (NRB_PSD001)')
 ax.legend()
 ax.set_ylim(0, max(hhi_vals) * 1.3)
 plt.tight_layout()
@@ -340,8 +374,8 @@ for r in ch_totals:
         size = min(r[3] / 500, 500)
         ax.scatter(r[1]/1e9, r[2]/1e3, s=max(size, 50), color=COLORS.get(r[0], '#999'), alpha=0.7, edgecolors='black')
         ax.annotate(r[0].replace('_', ' ').title(), (r[1]/1e9, r[2]/1e3), textcoords="offset points", xytext=(5,5), fontsize=8)
-ax.set_xlabel('Total Transaction Count (Billions, Jul 2020 - Jul 2025)')
-ax.set_ylabel('Total Transaction Value (Billion NPR, Jul 2020 - Jul 2025)')
+ax.set_xlabel('Total Transaction Count (Billions, calendar 2021 through Jul 2025)')
+ax.set_ylabel('Total Transaction Value (Billion NPR, calendar 2021 through Jul 2025)')
 ax.set_title('Payment Channel Positioning: Volume vs Value\nBubble size = Average transaction value\nSource: NRB Payment Systems Indicators (NRB_PSD001)')
 ax.set_xscale('log')
 ax.set_yscale('log')
@@ -352,7 +386,7 @@ plt.close()
 print("\nChart saved: analysis/charts/05_channel_positioning.png")
 
 # Value migration: year-over-year growth by channel
-print(f"\nChannel YoY value growth rates:")
+print(f"\nChannel YoY value growth rates (2025 vs 2024 is partial-year; not comparable):")
 print(f"{'Channel':>20}", end='')
 for i in range(1, len(years)):
     print(f" | {years[i]:>8}", end='')
@@ -361,15 +395,14 @@ print("-" * (20 + 11 * (len(years)-1)))
 
 for ch in channels_of_interest:
     print(f"{ch:>20}", end='')
-    prev = None
-    for y in years:
-        val = pivot_value[ch].get(y, 0)
-        if prev and prev > 0:
-            growth = (val/prev - 1) * 100
+    for i in range(1, len(years)):
+        prev = pivot_value[ch].get(years[i - 1], 0) or 0
+        val = pivot_value[ch].get(years[i], 0) or 0
+        if prev > 0:
+            growth = (val / prev - 1) * 100
             print(f" | {growth:>7.1f}%", end='')
         else:
-            print(f" | {'--':>8}", end='')
-        prev = val
+            print(f" | {'n/a':>8}", end='')
     print()
 
 conn.close()

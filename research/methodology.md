@@ -223,6 +223,12 @@ Each step is documented, versioned, and reproducible.
 | **Reporting lag** | Use most recent available data; document publication dates |
 | **Stock vs. flow confusion** | Verify variable type before inclusion; document in data dictionary |
 | **Selection bias** | Use full-population NRB data where possible; acknowledge when using samples |
+| **FY total columns in NRB XLSX** | Skip columns whose headers contain `FY`; use Section A as the canonical month list. See `analysis/data_quality_report.md`. |
+| **Channel double-counting** | NRB may record the same payment under more than one channel (e.g. QR and wallet). Summing all channels overstates unique payments; treat totals as reported-channel activity, not unique payments. |
+| **Cash / cheque / wholesale in “digital” totals** | ATM cash withdrawal, ECC, and RTGS are not retail electronic payments. Headline “digital retail” series exclude these three codes. |
+| **Bikram Sambat → Gregorian labels** | Month labels use the dominant Gregorian month (e.g. Saun → July). This is not a day-accurate calendar conversion. |
+| **Partial calendar years** | 2020 starts in July and 2025 ends in July. CAGR and YoY use full calendar years 2021–2024 unless a partial-year note is attached. |
+| **HHI on channels ≠ firm concentration** | Channel-mix HHI from NRB rails is not bank/PSP market concentration. |
 
 ### 7.2 Analytical Threats
 

@@ -35,6 +35,9 @@ cd Nepal-Digital-Payments-Strategy-2026
 # Install dependencies
 pip install -r requirements.txt
 
+# Rebuild monthly CSV from the NRB XLSX (requires sources/NRB_PSD_Sep2025_REAL.xlsx)
+python src/ingestion/extract_xlsx_v2.py
+
 # Load the database
 python src/ingestion/load_nrb_indicators.py
 
@@ -80,11 +83,13 @@ Nepal-Digital-Payments-Strategy-2026/
 │
 ├── src/
 │   ├── ingestion/
+│   │   ├── extract_xlsx_v2.py         # XLSX → monthly CSV (skips FY totals)
 │   │   └── load_nrb_indicators.py     # Database loading script
 │   └── analysis/
 │       └── run_all_analyses.py        # All 5 core analyses
 │
 ├── analysis/
+│   ├── data_quality_report.md         # FY-total extraction audit
 │   └── charts/                        # Generated visualizations
 │       ├── 01_total_digital_growth.png
 │       ├── 02_channel_value_shares.png
@@ -135,24 +140,27 @@ Tier 7: Analyst Inference
 
 ## Key Findings (Preliminary)
 
+Figures below use the **corrected** monthly extract (FY total columns skipped). The original CSV mixed annual totals into monthly series; see `analysis/data_quality_report.md`. Calendar years are Gregorian labels of `date_ad`. **All-channel** totals include ATM cash, ECC (cheques), and RTGS; they are reported-channel activity and may double-count overlapping rails.
+
 ### 1. Nepal is Becoming More Digital
-- Transaction count: 0.97B (2021) → 2.91B (2024) — **3× growth**
-- QR is the breakout channel: **252% YoY growth** in 2022
+- All NRB-reported channels: **0.57B (2021) → 1.71B (2024)** transaction count — about **3×** (CAGR **44.6%**)
+- Digital retail (excl. ATM cash, ECC, RTGS): **0.46B → 1.56B** — CAGR **50.0%**
+- QR value grew **219%** in calendar 2022 (corrected series)
 
 ### 2. Two-Layer Market Emerging
-| Layer | Channels | Avg Transaction | Growth |
-|-------|----------|-----------------|--------|
-| **High-value** | Mobile banking, internet banking | NPR 4,000–8,000 | Steady |
-| **High-frequency** | Wallet, QR, POS | NPR 1,000–3,000 | Explosive |
+| Layer | Channels | Avg Transaction (2021–Jul 2025) | Growth |
+|-------|----------|----------------------------------|--------|
+| **High-value** | Mobile banking, internet banking | ~NPR 7,300 (mobile); internet much higher | Steady |
+| **High-frequency** | Wallet, QR, POS | ~NPR 1,100–5,000 | Strong |
 
 ### 3. Engagement Depth Varies by Channel
-- **Mobile banking**: 3× increase in transactions/user (0.68 → 2.01)
-- **Wallet**: Flat at ~1.5 transactions/user — but growing user base
+- **Mobile banking**: transactions/user **0.52 → 2.26** (first vs last month in the series)
+- **Wallet**: about **1.62** transactions/user — flat engagement, growing user base
 
 ### 4. QR Payments Are Transforming Retail
-- QR transaction count: 195K/month (Jul 2020) → 31.3M/month (Jul 2025)
-- QR transaction value: NPR 589M → NPR 90.9B monthly
-- **160× growth in transaction count over 5 years**
+- QR transaction count: **195K/month (Jul 2020) → 40.9M/month (Jul 2025)**
+- QR transaction value: **NPR 0.59B → NPR 100.7B** monthly
+- **~210×** growth in transaction count on those monthly endpoints (not a 2021 vs 2025 annual ratio)
 
 ---
 
