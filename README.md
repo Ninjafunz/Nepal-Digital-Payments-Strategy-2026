@@ -45,6 +45,10 @@ python src/ingestion/load_nrb_indicators.py
 python src/analysis/run_all_analyses.py
 ```
 
+## Reader Site
+
+The public reader site is in `site/`. The GitHub Pages workflow copies the generated charts into the published build whenever `main` changes. Enable **Settings → Pages → Build and deployment → GitHub Actions** once, then visit the repository’s Pages URL after the deploy completes.
+
 ---
 
 ## Repository Structure
