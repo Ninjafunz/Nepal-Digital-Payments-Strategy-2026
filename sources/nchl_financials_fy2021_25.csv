@@ -1,0 +1,5 @@
+fiscal_year_bs,fiscal_year_ad,operating_profit_npr_millions,net_profit_npr_millions,transactions_millions,settlement_value_npr_trillions,source_id,notes
+2078/79,2021-22,563.019,354.624,,,NCH003,"Audited annual report; transaction throughput not normalized into this extract."
+2079/80,2022-23,610.659,376.796,,,NCH004,"Audited annual report; transaction throughput not normalized into this extract."
+2080/81,2023-24,660.154,400.399,,,NCH005,"Audited annual report; reported transaction count growth 54% year-on-year."
+2081/82,2024-25,723.556,417.338,211,18.6,NCH006,"Audited annual report and AGM disclosure; transaction count grew over 67% year-on-year."

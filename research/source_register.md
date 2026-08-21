@@ -105,6 +105,19 @@ These will be populated in Phase 6 (Company Research).
 | NCH001 | NCHL (Nepal Clearing House) | Annual Report / Disclosure | 2021–2025 | Infrastructure-level | TBD | B13–B14, G01–G06 | To collect |
 | SAN001 | SANIMA / Smart Technologies | Disclosure | TBD | Infrastructure-level | TBD | G01–G06 | To identify |
 
+### Phase 6 registry sources
+
+| Source ID | Institution | Document | Date | Coverage | URL | Variables | Status |
+|-----------|-------------|----------|------|----------|-----|-----------|--------|
+| NRB009 | Nepal Rastra Bank | Payment Systems Oversight Report 2024/25, Annex 1 | 2025 | Licensed PSO/PSP universe as of mid-July 2025 | https://www.nrb.org.np/contents/uploads/2026/08/Payment-Oversight-Report-2024-25-1.pdf | Institution name, licence type, licence date, address | Confirmed; Tier 1 |
+| NRB010 | Nepal Rastra Bank | Payment Systems Indicators: Asar 2082 | 2025 | Payment-institution count and national access indicators | https://www.nrb.org.np/psd/payment-systems-indicators-of-2082-asar/ | PSO/PSP count, wallet and mobile-banking access | Confirmed; Tier 1 |
+| KHL002 | IME Khalti / Khalti | Merger information | 2025 | Khalti and IME Pay consolidation | https://khalti.com/ | Entity/event status | Confirmed; Tier 3 |
+| NCH002 | Nepal Clearing House Ltd. | Financial reports index | 2024–25 | Infrastructure financial-report availability | https://nchl.com.np/financial-reports/ | Candidate company financial data | Confirmed; Tier 3 |
+| NCH003 | Nepal Clearing House Ltd. | Annual Report 2078/79 | 2021–22 | Audited financials | https://nchl.com.np/wp-content/uploads/2023/12/Annual-Report-2078-79-2021-22.pdf | Operating profit, net profit | Confirmed; Tier 2 |
+| NCH004 | Nepal Clearing House Ltd. | Annual Report 2079/80 | 2022–23 | Audited financials | https://nchl.com.np/wp-content/uploads/2024/04/NCHL_Annual-report-79-80.pdf | Operating profit, net profit | Confirmed; Tier 2 |
+| NCH005 | Nepal Clearing House Ltd. | Annual Report 2080/81 | 2023–24 | Audited financials | https://nchl.com.np/wp-content/uploads/2025/01/Annual-Report-2080-81-2023-24.pdf | Operating profit, net profit | Confirmed; Tier 2 |
+| NCH006 | Nepal Clearing House Ltd. | Annual Report 2081/82 | 2024–25 | Audited financials and throughput | https://nchl.com.np/wp-content/uploads/2025/12/NCHL-AR-2024-25.pdf | Operating profit, net profit, transactions, settlement value | Confirmed; Tier 2 |
+
 ---
 
 ## C. Government & International Sources — Tier 1/5
@@ -163,7 +176,7 @@ This section tracks which sources have been used for which analyses.
 
 | Analysis | Sources Used | Date |
 |----------|-------------|------|
-| (No analyses completed yet) | — | — |
+| Phase 6 player landscape | NRB009, NRB010, KHL002, NCH002 | 2026-08-21 |
 
 ---
 
